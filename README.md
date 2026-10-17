@@ -1,14 +1,16 @@
 <div id="top"></div>
 
 <div align="center">
-  <img src="src/images/screenshot.png" alt="VibePlay home page">
+  <a href="https://vibeplays.netlify.app">
+    <img src="src/images/screenshot.png" alt="VibePlay home page">
+  </a>
 
   <h3 align="center">VibePlay</h3>
 
   <p align="center">
     A music player web app built with React and Tailwind CSS.
     <br />
-    <a href="https://github.com/Shantil-K/VibePlay"><strong>Explore the code on GitHub</strong></a>
+    <a href="https://vibeplays.netlify.app"><strong>View Live Demo »</strong></a>
   </p>
 </div>
 
@@ -110,7 +112,7 @@ The backend is expected to provide these endpoints: `POST /user`, `POST /login`,
 | `npm test`            | Run tests                                    |
 | `npm run build:css`   | Compile Tailwind CSS to `src/styles/main.css` |
 
-The included `netlify.toml` redirects all routes to `index.html`, so the app can be deployed to Netlify as a single-page app.
+The app is deployed on Netlify at **https://vibeplays.netlify.app**. Build settings live in `netlify.toml`, and every push to `main` redeploys automatically.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
