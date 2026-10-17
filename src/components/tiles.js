@@ -1,25 +1,37 @@
 import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addTrack, deleteTrack, getSavedTracks, getTopTracks } from '../utils';
 import { AppContext } from '../AppContext';
 
 const Tiles = ({ onlyShowSaved = false }) => {
-	const { savedTracks, setSavedTracks } = useContext(AppContext);
+	const { user, savedTracks, setSavedTracks } = useContext(AppContext);
 	const [tracks, setTracks] = useState();
+	const loggedIn = user.username !== '';
 	useEffect(() => {
 		async function fetchData() {
-			if (savedTracks === null) {
-				const tracksSavedInDb = await getSavedTracks();
-				setSavedTracks(tracksSavedInDb);
+			// Saved tracks need the backend. If it can't be reached,
+			// fall back to an empty list so the chart still loads.
+			if (loggedIn && savedTracks === null) {
+				try {
+					setSavedTracks(await getSavedTracks());
+				} catch (error) {
+					console.error('Could not load saved tracks:', error);
+					setSavedTracks([]);
+				}
 			}
 			if (onlyShowSaved === false) {
-				const topTracks = await getTopTracks();
-				setTracks(topTracks);
+				try {
+					setTracks(await getTopTracks());
+				} catch (error) {
+					console.error('Could not load top tracks:', error);
+					setTracks([]);
+				}
 			} else {
 				setTracks(savedTracks);
 			}
 		}
 		fetchData();
-	}, [onlyShowSaved, savedTracks, setSavedTracks]);
+	}, [loggedIn, onlyShowSaved, savedTracks, setSavedTracks]);
 
 	return (
 		<div className="flex flex-wrap">
@@ -38,6 +50,13 @@ const Tiles = ({ onlyShowSaved = false }) => {
 						/>
 						<div className="text-sm truncate">{track.name}</div>
 						<div className="text-xs">{track.artistName}</div>
+						{!loggedIn ? (
+							<Link
+								to="/login"
+								className="mt-auto bg-pink-500 hover:bg-black p-1.5 rounded text-white text-center">
+								Log in to save
+							</Link>
+						) : (
 						<button
 							onClick={() => {
 								if (onlyShowSaved) {
@@ -73,6 +92,7 @@ const Tiles = ({ onlyShowSaved = false }) => {
 									: 'Track Saved'
 								: 'Save Track'}
 						</button>
+						)}
 					</div>
 				))}
 		</div>

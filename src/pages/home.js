@@ -19,6 +19,8 @@ const Home = () => {
 				className="bg-pink-500 hover:bg-black p-1.5 rounded text-white mt-8">
 				Click here to sign up
 			</Link>
+			<div className="text-xl mt-10 mb-4 self-start ml-2.5">Top Songs</div>
+			<Tiles />
 		</div>
 	) : (
 		<div className="mt-4 px-4">
