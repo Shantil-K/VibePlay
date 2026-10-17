@@ -95,8 +95,8 @@ const Tiles = ({ onlyShowSaved = false }) => {
 											<rect x="14" y="5" width="4" height="14" rx="1" />
 										</svg>
 									) : (
-										<svg viewBox="0 0 24 24" className="w-6 h-6 ml-0.5" fill="currentColor">
-											<path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z" />
+										<svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+											<path d="M7.5 5.5v13a1 1 0 0 0 1.53.85l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 7.5 5.5z" />
 										</svg>
 									)}
 								</button>
