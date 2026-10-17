@@ -26,13 +26,13 @@
 
 ## About The Project
 
-**MyMusic** lets users sign up, log in, browse top tracks, and save songs to a personal playlist.
+**MyMusic** lets users browse the top songs chart, play 30-second previews, and (after signing up) save songs to a personal playlist.
 
 This repository contains the **React frontend**. User accounts and playlists are handled by a separate REST API (Node.js / Express / MongoDB), configured through environment variables.
 
 **Pages**
 
-- **Home** – welcome screen, or a grid of top tracks once logged in
+- **Home** – the iTunes top 50 songs, each with a play button for a 30-second preview
 - **Log In / Sign Up** – account forms
 - **Playlist** – the user's saved tracks
 - **Settings** – update or delete the account

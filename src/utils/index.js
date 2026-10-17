@@ -130,11 +130,16 @@ export const getTopTracks = async () => {
 	return entries.map((entry) => {
 		const images = entry['im:image'] ?? [];
 		const smallImage = images.length ? images[images.length - 1].label : '';
+		// The 30-second audio preview is the link with rel="enclosure"
+		const preview = (entry.link ?? []).find(
+			(link) => link.attributes?.rel === 'enclosure',
+		);
 		return {
 			name: entry['im:name'].label,
 			artistName: entry['im:artist'].label,
 			// Swap the small thumbnail size for a 500x500 version
 			image: smallImage.replace(/\/\d+x\d+bb\.(png|jpg)$/, '/500x500bb.jpg'),
+			previewUrl: preview?.attributes?.href ?? '',
 		};
 	});
 };
