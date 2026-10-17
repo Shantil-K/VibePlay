@@ -8,7 +8,7 @@
   <p align="center">
     A music player web app built with React and Tailwind CSS.
     <br />
-    <a href="https://github.com/Cosmos0915/Music-Player"><strong>Explore the code on GitHub</strong></a>
+    <a href="https://github.com/Shantil-K/VibePlay"><strong>Explore the code on GitHub</strong></a>
   </p>
 </div>
 
@@ -21,6 +21,7 @@
     <li><a href="#environment-variables">Environment Variables</a></li>
     <li><a href="#available-scripts">Available Scripts</a></li>
     <li><a href="#notes">Notes</a></li>
+    <li><a href="#license">License</a></li>
   </ol>
 </details>
 
@@ -59,8 +60,8 @@ This repository contains the **React frontend**. User accounts and playlists are
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/Cosmos0915/Music-Player.git
-   cd Music-Player
+   git clone https://github.com/Shantil-K/VibePlay.git
+   cd VibePlay
    ```
 
 2. Install dependencies
@@ -116,5 +117,11 @@ The included `netlify.toml` redirects all routes to `index.html`, so the app can
 ## Notes
 
 - Top tracks come from the [iTunes Top Songs RSS feed](https://itunes.apple.com/us/rss/topsongs/limit=50/json) (US chart, top 50). It is free and needs no API key.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE) (GPL-3.0-or-later).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
