@@ -120,16 +120,21 @@ export const logOut = async () => {
 	document.cookie = `authToken=loggedOut;max-age=0;domain=${reactAppDomain}`;
 };
 
+// Top songs chart from the iTunes RSS feed (free, no API key needed)
 export const getTopTracks = async () => {
 	const response = await fetch(
-		'https://api.napster.com/v2.2/tracks/top?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4',
+		'https://itunes.apple.com/us/rss/topsongs/limit=50/json',
 	);
 	const data = await response.json();
-	return data.tracks.map((track) => {
+	const entries = data.feed?.entry ?? [];
+	return entries.map((entry) => {
+		const images = entry['im:image'] ?? [];
+		const smallImage = images.length ? images[images.length - 1].label : '';
 		return {
-			name: track.name,
-			artistName: track.artistName,
-			image: `https://api.napster.com/imageserver/v2/artists/${track.artistId}/images/500x500.jpg`,
+			name: entry['im:name'].label,
+			artistName: entry['im:artist'].label,
+			// Swap the small thumbnail size for a 500x500 version
+			image: smallImage.replace(/\/\d+x\d+bb\.(png|jpg)$/, '/500x500bb.jpg'),
 		};
 	});
 };

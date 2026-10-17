@@ -44,6 +44,7 @@ This repository contains the **React frontend**. User accounts and playlists are
 - [React](https://reactjs.org/) 17 (Create React App + CRACO)
 - [React Router](https://reactrouter.com/) 5
 - [Tailwind CSS](https://tailwindcss.com/) 2
+- [iTunes Top Songs RSS feed](https://itunes.apple.com/us/rss/topsongs/limit=50/json) for chart data
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -114,6 +115,6 @@ The included `netlify.toml` redirects all routes to `index.html`, so the app can
 
 ## Notes
 
-- Track data comes from the **Napster API** (`api.napster.com`), which is no longer available. The track grid on the home page will stay empty until the app is switched to another music API.
+- Top tracks come from the [iTunes Top Songs RSS feed](https://itunes.apple.com/us/rss/topsongs/limit=50/json) (US chart, top 50). It is free and needs no API key.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
