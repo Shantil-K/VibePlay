@@ -7,7 +7,6 @@ import SignUp from './pages/signup';
 import Playlist from './pages/playlist';
 import { AppContext } from './AppContext';
 import Settings from './pages/settings';
-import Footer from './components/footer';
 import { attemptTokenLogin } from './utils';
 
 const App = () => {
@@ -50,7 +49,6 @@ const App = () => {
 						<Home />
 					</Route>
 				</Switch>
-				<Footer />
 			</BrowserRouter>
 		</AppContext.Provider>
 	);
