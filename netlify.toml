@@ -1,4 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  # react-scripts 4 needs the legacy OpenSSL provider on Node 17+
+  NODE_OPTIONS = "--openssl-legacy-provider"
+
+# Send every route to the React app (single-page app routing)
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/index.html"
   status = 200
