@@ -8,7 +8,7 @@ const Home = () => {
 
 	return user.username === '' ? (
 		<div className="mt-8 px-4 flex flex-col items-center">
-			<div className="text-3xl mb-4">Welcome to MyMusic</div>
+			<div className="text-3xl mb-4">Welcome to VibePlay</div>
 			<Link
 				to="/login"
 				className="bg-pink-500 hover:bg-black p-1.5 rounded text-white mt-4">
@@ -25,7 +25,7 @@ const Home = () => {
 	) : (
 		<div className="mt-4 px-4">
 			<div className="text-xl mb-4 ml-2.5">
-				<div className="flex">Hi {user.username}, welcome to MyMusic!</div>
+				<div className="flex">Hi {user.username}, welcome to VibePlay!</div>
 			</div>
 			<Tiles />
 		</div>

@@ -1,9 +1,9 @@
 <div id="top"></div>
 
 <div align="center">
-  <img src="src/images/screenshot.png" alt="MyMusic screenshot">
+  <img src="src/images/screenshot.png" alt="VibePlay home page">
 
-  <h3 align="center">MyMusic</h3>
+  <h3 align="center">VibePlay</h3>
 
   <p align="center">
     A music player web app built with React and Tailwind CSS.
@@ -27,7 +27,7 @@
 
 ## About The Project
 
-**MyMusic** lets users browse the top songs chart, play 30-second previews, and (after signing up) save songs to a personal playlist.
+**VibePlay** lets users browse the top songs chart, play 30-second previews, and (after signing up) save songs to a personal playlist.
 
 This repository contains the **React frontend**. User accounts and playlists are handled by a separate REST API (Node.js / Express / MongoDB), configured through environment variables.
 
